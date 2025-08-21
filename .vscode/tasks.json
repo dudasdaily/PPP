@@ -4,113 +4,14 @@
         {
             "label": "C++ 컴파일",
             "type": "shell",
-            "command": "g++",
-            "args": [
-                "-g",
-                "-std=c++17",
-                "-Wall",
-                "-Wextra",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
-            ],
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": true,
-                "clear": false
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "detail": "현재 파일을 g++로 컴파일합니다."
-        },
-        {
-            "label": "C++ 빌드 및 실행",
-            "type": "shell",
-            "command": "g++",
-            "args": [
-                "-g",
-                "-std=c++17",
-                "-Wall",
-                "-Wextra",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
-                "&&",
-                "${fileDirname}/${fileBasenameNoExtension}"
-            ],
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": true,
-                "clear": false
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "detail": "현재 파일을 컴파일하고 실행합니다."
-        },
-        {
-            "label": "모든 cpp 파일 정리",
-            "type": "shell",
-            "command": "find",
-            "args": [
-                ".",
-                "-name",
-                "*.exe",
-                "-delete",
-                "&&",
-                "find",
-                ".",
-                "-type",
-                "f",
-                "-executable",
-                "-not",
-                "-name",
-                "*.*",
-                "-delete"
-            ],
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            },
-            "detail": "컴파일된 실행 파일들을 정리합니다."
-        },
-        {
-            "type": "cppbuild",
-            "label": "C/C++: g++ 활성 파일 빌드",
-            "command": "/usr/bin/g++",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
-                "-Wall",
-                "-Wextra",
-                "-g"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
+            "command": "mkdir -p ${workspaceFolder}/build && g++ -g -std=c++23 -Wall -Wextra \"${file}\" -o \"${workspaceFolder}/build/${fileBasenameNoExtension}\"",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "디버거에서 생성된 작업입니다."
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }

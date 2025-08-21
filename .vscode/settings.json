@@ -3,15 +3,16 @@
         "*.h": "cpp",
         "*.hpp": "cpp",
         "*.cpp": "cpp",
-        "*.c": "c"
+        "*.c": "c",
+        "iostream": "cpp"
     },
-    "C_Cpp.default.cppStandard": "c++17",
-    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.default.cppStandard": "c++23",
+    "C_Cpp.default.cStandard": "c23",
     "C_Cpp.default.compilerPath": "/usr/bin/g++",
     "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "code-runner.executorMap": {
-        "cpp": "cd $dir && g++ -std=c++17 -Wall -Wextra -g $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+        "cpp": "mkdir -p ${workspaceRoot}/build && g++ -std=c++23 -Wall -Wextra -g $fullFileName -o ${workspaceRoot}/build/$fileNameWithoutExt && ${workspaceRoot}/build/$fileNameWithoutExt"
     },
     "code-runner.runInTerminal": true,
     "code-runner.saveFileBeforeRun": true,
