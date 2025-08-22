@@ -1,21 +1,34 @@
 {
+    // =================================================================
+    // C/C++ 확장 프로그램 설정
+    // =================================================================
     "files.associations": {
         "*.h": "cpp",
         "*.hpp": "cpp",
         "*.cpp": "cpp",
         "*.c": "c",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "memory": "cpp"
     },
     "C_Cpp.default.cppStandard": "c++23",
     "C_Cpp.default.cStandard": "c23",
     "C_Cpp.default.compilerPath": "/usr/bin/g++",
     "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
-    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    // =================================================================
+    // Code Runner 설정
+    // =================================================================
     "code-runner.executorMap": {
-        "cpp": "mkdir -p ${workspaceRoot}/build && g++ -std=c++23 -Wall -Wextra -g $fullFileName -o ${workspaceRoot}/build/$fileNameWithoutExt && ${workspaceRoot}/build/$fileNameWithoutExt"
+        // [수정됨] 빌드 경로를 프로젝트 폴더($workspaceRoot) 내의 'build' 폴더로 지정하여 권한 문제를 해결했습니다.
+        // 또한, 공백이 포함된 파일 이름을 안전하게 처리하기 위해 경로에 큰따옴표를 추가했습니다.
+        "cpp": "mkdir -p \"$workspaceRoot/build\" && g++ -std=c++23 -Wall -Wextra -g \"$fullFileName\" -o \"$workspaceRoot/build/$fileNameWithoutExt\" && \"$workspaceRoot/build/$fileNameWithoutExt\""
     },
+    // 코드를 터미널에서 실행하여 'cin' 같은 입력 처리가 가능하도록 합니다.
     "code-runner.runInTerminal": true,
+    // 실행 전에 항상 파일을 저장합니다.
     "code-runner.saveFileBeforeRun": true,
+    // =================================================================
+    // 에디터 및 파일 설정
+    // =================================================================
     "editor.formatOnSave": true,
     "editor.tabSize": 4,
     "editor.insertSpaces": true,

@@ -5,13 +5,36 @@
             "label": "C++ 컴파일",
             "type": "shell",
             "command": "mkdir -p ${workspaceFolder}/build && g++ -g -std=c++23 -Wall -Wextra \"${file}\" -o \"${workspaceFolder}/build/${fileBasenameNoExtension}\"",
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ 활성 파일 빌드",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-Wall",
+                "-Wextra",
+                "-g"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "detail": "디버거에서 생성된 작업입니다."
         }
     ]
 }
