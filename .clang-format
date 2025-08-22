@@ -1,0 +1,16 @@
+# .clang-format
+
+# 기반으로 할 코딩 스타일을 선택합니다. (Google, LLVM, Microsoft, Mozilla 등)
+BasedOnStyle: Google
+
+# 여기서 들여쓰기 칸 수를 4칸으로 설정합니다.
+IndentWidth: 4
+
+# 탭 너비도 4칸으로 맞춥니다.
+TabWidth: 4
+
+# 실제 탭 문자 대신 스페이스를 사용합니다.
+UseTab: Never
+
+# 한 줄의 최대 길이를 지정합니다 (선택 사항).
+ColumnLimit: 120
