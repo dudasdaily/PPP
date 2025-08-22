@@ -2,39 +2,36 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "C++ 컴파일",
+            // 1. build 폴더를 만드는 작업을 먼저 정의합니다.
+            "label": "create build directory",
             "type": "shell",
-            "command": "mkdir -p ${workspaceFolder}/build && g++ -g -std=c++23 -Wall -Wextra \"${file}\" -o \"${workspaceFolder}/build/${fileBasenameNoExtension}\"",
-            "group": "build",
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "command": "mkdir -p ${workspaceFolder}/build"
         },
         {
-            "type": "cppbuild",
-            "label": "C/C++: g++ 활성 파일 빌드",
-            "command": "/usr/bin/g++",
+            // 2. 실제 컴파일을 수행하는 기본 빌드 작업입니다.
+            "label": "Build C++23 with g++",
+            "type": "shell",
+            "command": "g++", // 명령어는 g++ 하나만 남깁니다.
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
-                "-Wall",
-                "-Wextra",
-                "-g"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
+                "${workspaceFolder}/build/${fileBasenameNoExtension}",
+                "-std=c++23"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "디버거에서 생성된 작업입니다."
+            "problemMatcher": [
+                "$gcc"
+            ],
+            // "Build C++23..." 작업을 실행하기 전에
+            // "create build directory" 작업을 먼저 실행하도록 설정합니다.
+            "dependsOn": [
+                "create build directory"
+            ]
         }
     ]
 }

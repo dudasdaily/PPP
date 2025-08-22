@@ -2,13 +2,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C++ 디버그",
+            "name": "(gdb) Launch C++23",
             "type": "cppdbg",
             "request": "launch",
+            // 디버깅할 프로그램의 경로를 build 폴더 안으로 지정합니다.
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/build",
+            "cwd": "${workspaceFolder}", // 작업 디렉토리를 프로젝트 루트로 변경
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
@@ -19,8 +20,8 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C++ 컴파일",
-            "miDebuggerPath": "/usr/bin/gdb"
+            // 이 부분은 변경 없이 tasks.json의 label을 그대로 사용합니다.
+            "preLaunchTask": "Build C++23 with g++"
         }
     ]
 }
