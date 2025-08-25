@@ -4,8 +4,8 @@
       "name": "linux-gcc-x64",
       "intelliSenseMode": "linux-gcc-x64",
       "compilerPath": "/usr/bin/gcc",
-      "cppStandard": "${default}",
-      "cStandard": "${default}",
+      "cppStandard": "c++23",
+      "cStandard": "c23",
       "includePath": [
         "${workspaceFolder}/**"
       ]
