@@ -28,8 +28,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/dudasdaily/gitRepo/PPP/calc",
-      "program": "/home/dudasdaily/gitRepo/PPP/calc/build/Debug/outDebug",
+      "cwd": "/home/dudasdaily/gitRepo/PPP/test",
+      "program": "/home/dudasdaily/gitRepo/PPP/test/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
